@@ -49,7 +49,3 @@ await connector.logout();
 // Is logged in?
 const isLoggedIn = await connector.isLoggedIn();
 ```
-
-## License
-
-[MIT](LICENSE).
