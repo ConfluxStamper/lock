@@ -1,49 +1,32 @@
 # Lock.js
 
-A lightweight JavaScript library for log in to Ethereum.
+A lightweight JavaScript library for log in to Conflux.
 
 ### Install
 To install Lock.js, open your terminal and run:
 ```
-npm install @bonustrack/lock
-```
-
-#### Browser
-You can create an index.html file and include Lock.js with:
-```html
-<script src="https://cdn.jsdelivr.net/npm/@bonustrack/lock"></script>
+npm install @stampers/lock
 ```
 
 ### Usage
 ```js
-import { Lock } from '@bonustrack/lock';
-import injected from '@bonustrack/lock/connectors/injected';
-import walletconnect from '@bonustrack/lock/connectors/walletconnect';
+import { Lock } from '@stampers/lock';
+import confluxPortal from '@stampers/lock/connectors/conflux-portal';
 
 // Init Lock
 const lock = new Lock();
 
-// Add injected connector
+// Add conflux-portal connector
 lock.addConnector({
-  key: 'injected',
-  connector: injected
+  key: 'conflux-portal',
+  connector: confluxPortal
 });
 
-// Add WalletConnect connector
-lock.addConnector({
-  key: 'walletconnect',
-  connector: walletconnect,
-  options: {
-    infuraId: 'c00cb721...'
-  }
-});
+// Log in with conflux-portal
+const connector = lock.getConnector('conflux-portal');
+const provider = await connector.connect('conflux-portal');
 
-// Log in with injected web3
-const connector = lock.getConnector('injected');
-const provider = await connector.connect('injected');
-
-// Log out from WalletConnect
-const connector = lock.getConnector('walletconnect');
+// Log out
 await connector.logout();
 
 // Is logged in?
