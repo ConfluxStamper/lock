@@ -1,6 +1,6 @@
 # Lock.js
 
-A lightweight JavaScript library for log in to Conflux.
+A lightweight JavaScript library for log in to PlatON.
 
 ### Install
 To install Lock.js, open your terminal and run:
