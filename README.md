@@ -11,20 +11,20 @@ npm install @stampers/lock
 ### Usage
 ```js
 import { Lock } from '@stampers/lock';
-import confluxPortal from '@stampers/lock/connectors/conflux-portal';
+import platonPortal from '@stampers/lock/connectors/platon-portal';
 
 // Init Lock
 const lock = new Lock();
 
-// Add conflux-portal connector
+// Add platon-portal connector
 lock.addConnector({
-  key: 'conflux-portal',
-  connector: confluxPortal
+  key: 'platon-portal',
+  connector: platonPortal
 });
 
-// Log in with conflux-portal
-const connector = lock.getConnector('conflux-portal');
-const provider = await connector.connect('conflux-portal');
+// Log in with platon-portal
+const connector = lock.getConnector('platon-portal');
+const provider = await connector.connect('platon-portal');
 
 // Log out
 await connector.logout();
