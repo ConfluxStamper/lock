@@ -5,13 +5,13 @@ export default class Connector extends LockConnector {
     let provider;
     if (window['platon'] && window['platon'].isConnected()) {
       provider = window['platon'];
-      // try {
-      //   await window['conflux'].enable();
-      // } catch (e) {
-      //   console.error(e);
-      // }
+      try {
+        await provider.request({ method: 'platon_requestAccounts' })
+      } catch (e) {
+        console.error(e);
+      }
+      return provider;
     }
-    return provider;
   }
 
   isLoggedIn(): boolean {
