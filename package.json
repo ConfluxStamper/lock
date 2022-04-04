@@ -4,8 +4,6 @@
   "repository": "Proposal-Stampers/lock",
   "license": "MIT",
   "main": "dist/lock.cjs.js",
-  "module": "dist/lock.esm.js",
-  "browser": "dist/lock.min.js",
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^13.9.5",
