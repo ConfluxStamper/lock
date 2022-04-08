@@ -11,20 +11,20 @@ npm install @stampers/lock
 ### Usage
 ```js
 import { Lock } from '@stampers/lock';
-import confluxPortal from '@stampers/lock/connectors/conflux-portal';
+import fluent from '@stampers/lock/connectors/fluent';
 
 // Init Lock
 const lock = new Lock();
 
-// Add conflux-portal connector
+// Add fluent connector
 lock.addConnector({
-  key: 'conflux-portal',
-  connector: confluxPortal
+  key: 'fluent',
+  connector: fluent
 });
 
-// Log in with conflux-portal
-const connector = lock.getConnector('conflux-portal');
-const provider = await connector.connect('conflux-portal');
+// Log in with fluent
+const connector = lock.getConnector('fluent');
+const provider = await connector.connect('fluent');
 
 // Log out
 await connector.logout();
